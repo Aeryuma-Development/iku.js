@@ -38,9 +38,9 @@ Disember = "Disember";
 function tanggalanIslam(date) {
   if (!date) date = new Date()
   var dow = date.getDay();
-  var y = tod.getFullYear();
-  var m = tod.getMonth();
-  var d = tod.getDate();
+  var y = date.getFullYear();
+  var m = date.getMonth();
+  var d = date.getDate();
   var mh = m + 1;
   fixd = gregToFixed(y, mh, d);
   var h = new Hijri(1426, 11, 29);
@@ -51,7 +51,7 @@ function tanggalanIslam(date) {
     },
     hari() {
       var weekday = new Array(Ahad, Isnin, Selasa, Rabu, Khamis, Jumaat, Sabtu);
-      var dow = tod.getDay();
+      var dow = date.getDay();
       return weekday[dow]
     },
     bulan() {
