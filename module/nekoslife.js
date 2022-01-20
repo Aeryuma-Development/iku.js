@@ -75,7 +75,7 @@ var endpoints = {
 
 function nekoapi(url) {
   try {
-    axios.get("https://ikuapi.glitch.me" + url)
+    return axios.get("https://ikuapi.glitch.me" + url)
   } catch (e) {
     console.log(e)
   }
@@ -86,8 +86,8 @@ var nekolife = endpoints.nekolife
 
 function sfw() {
   return {
-    neko() {
-      return nekoapi(nekolife.sfw.neko)
+    async neko() {
+      return await nekoapi(nekolife.sfw.neko)
     },
   }
 }
